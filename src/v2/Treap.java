@@ -6,14 +6,16 @@
 package v2;
 
 /**
- *
- * @author gudmu
+ * 
+ * @author Guðmundur Óskar Halldórsson
  * @param <Key>
+ * @param <Value> 
  */
 public class Treap<Key extends Comparable<Key>, Value> {
        
     private Node root; // rót Treap
     
+    // Nested class sem táknar hnút í gagnagrindinni
     // útfærum tréð þ.a. það geymi vinstri og hægri hnút
     // þeir verða þá vinsta og hægra hluttré
     private class Node {
@@ -141,5 +143,26 @@ public class Treap<Key extends Comparable<Key>, Value> {
         } else {
             return curr.value; // gildi fundið
         }
+    }
+    
+    
+    /**
+     * aðferð sem prentar út tréð í stærðarröð.
+     * Nota þetta til að athuga hvort innsetning hafi
+     * heppnast rétt
+     * @param node 
+     */
+    private void printNode(Node node) {
+        if (node == null) {
+            return;
+        }
+        
+        printNode(node.left);
+        System.out.println(node.key);
+        printNode(node.right);
+    }
+    
+    public void printNode() {
+        this.printNode(this.root);
     }
 }
