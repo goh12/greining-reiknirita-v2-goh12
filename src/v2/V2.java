@@ -8,7 +8,7 @@ import java.util.Random;
  */
 public class V2 {
     private static final int arraySize = 5000;
-    private static final int searchMultiplier = 50;
+    private static final int searchMultiplier = 5000;
     private static long start;
     private static long time;
     
@@ -61,7 +61,7 @@ public class V2 {
         
         return array;
     }
-    
+        
     /**
      * @param args the command line arguments
      */
